@@ -46,6 +46,7 @@ sudo gem install jekyll
 ~~~
 
 **3. Github에서 new repository 생성**
+
 이름은 반드시 [본인 Github 아이디].github.io 이어야 한다.
 
 ![Markdown Image](../assets/images/170720/settings.png)
