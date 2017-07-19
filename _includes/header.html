@@ -12,7 +12,7 @@
             </a>
         {% else %}
             <span class="link">
-                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %}" />
+                <img class="selfie" alt="{{ site.name }}" src="{% if site.external-image %}{{ site.picture }}{% else %}{assets/images/profile.jpg}{% endif %}" />
             </span>
         {% endif %}
 
