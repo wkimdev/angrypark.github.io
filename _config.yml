@@ -52,6 +52,12 @@ github: angrypark
 email: sungnam1108@naver.com
 
 authors:
+    angrypark:
+        name: 박성남
+        bio: 데이터 분석을 공부하는 박성남입니다.
+        external-image: false
+        picture: assets/images/profile.jpg
+        facebook: sungnam1108
     johndoe:
         name: 박성남
         bio: 데이터 분석을 공부하는 박성남입니다.
