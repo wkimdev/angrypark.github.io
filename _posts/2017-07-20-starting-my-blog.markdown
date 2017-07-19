@@ -2,7 +2,7 @@
 title: "15분만에 깃허브 블로그 만들기"
 layout: post
 date: 2017-07-20 02:23
-image: /assets/images/markdown.jpg
+image: /assets/images/170720/background.jpeg
 headerImage: false
 tag:
 - github
