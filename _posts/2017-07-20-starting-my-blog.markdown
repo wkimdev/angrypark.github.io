@@ -52,6 +52,7 @@ sudo gem install jekyll
 
 
 **4. 본인 컴퓨터에 앞으로 블로그 글들을 관리할 폴더 생성**
+
 나는 Desktop에 angrypark이라는 폴더를 만들어 관리하기로 했다.
 
 **5. Github의 빈 저장소 불러오기**
@@ -65,9 +66,11 @@ $git push origin master
 그렇게 하면 내 폴더 안에 [본인 아이디].github.io 폴더가 생성된 것을 확인할 수 있다. 안에 내용물이 있다면 필요없으니 바로 지우자.
 
 **6. 예쁜 블로그 템플릿 받아오기**
+
 [Jekyll 테마 페이지](http://jekyllthemes.org/)에서 원하는 테마를 선택 한 후 download한다. 이 때, 안의 내용물들만 복사하여 5번에서 생성된 폴더에 붙여넣는다.
 
 **7. 템플릿 적용**
+
 5번과 같은 방식으로 하면 된다.
 ~~~
 $git status
