@@ -34,7 +34,7 @@ disqus:
   categories: [blog, project] # only show disqus for posts that have these categories
 
 # if you don't have any of social below, comment the line
-facebook: https://www.facebook.com/sungnam1108
+facebook: sungnam1108
 # twitter: mytwitter
 # google: mygoogle
 # instagram: myinstagram
@@ -42,7 +42,7 @@ facebook: https://www.facebook.com/sungnam1108
 # linkedin: mylinkedin
 # youtube: myyoutube
 # spotify: myspotify
-github: https://github.com/angrypark/
+github: angrypark
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
 # quora: userquora
@@ -53,17 +53,17 @@ email: sungnam1108@naver.com
 
 authors:
     johndoe:
-        name: John Doe
-        bio: A Man who travels the world eating noodles
+        name: 박성남
+        bio: 데이터 분석을 공부하는 박성남입니다.
         external-image: false
         picture: assets/images/profile.jpg
-        twitter: johndoe
+        twitter:
     jamesfoster:
-        name: James Foster
-        bio: A Man who develops software with coffee
+        name: 박성남
+        bio: 데이터 분석을 공부하는 박성남입니다.
         external-image: false
-        picture: assets/images/james.jpg
-        twitter: jamesfoster
+        picture: assets/images/profile.jpg
+        twitter:
 
 # do you want a larger site? change the option below
 # options: [normal, large] | default: normal
