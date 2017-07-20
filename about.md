@@ -2,7 +2,7 @@
 title: About
 layout: page
 ---
-![Profile Image](assets/images/profile.jpg =256)
+![Profile Image](assets/images/profile.jpg)
 
 <p>여기다가 이제 내 소개를 쓰면 되겠죠.</p>
 
