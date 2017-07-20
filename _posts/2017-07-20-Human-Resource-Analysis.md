@@ -32,6 +32,7 @@ externalLink: false
 - [Model 2. Decision Tree Classifier](#model-2-decision-tree-classifier)
 - [Model 3. RandomForest Classifier](#model-3-randomforest-classifier)
 - [Model 4. Keras Binomial Classifier](#model-4-keras-binomial-classifier)
+- [발표 자료](#발표-자료)
 
 ---
 ## Import Libraries
@@ -475,4 +476,11 @@ print("KerasClassifier Results: %.2f%% (%.2f%%)" % (results.mean()*100, results.
 
     KerasClassifier Results: 86.92% (1.50%)
 
+---
+## 발표 자료
+{% highlight html %}
+<iframe src="//www.slideshare.net/SungnamPark2/kaggle-human-resource-data-analysis" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+{% endhighlight %}
+
+<iframe src="//www.slideshare.net/SungnamPark2/kaggle-human-resource-data-analysis" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
 ---
