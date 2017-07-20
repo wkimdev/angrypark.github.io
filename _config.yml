@@ -67,7 +67,7 @@ authors:
     byunggyu:
         name: 강병규
         bio: YBIGTA Data Science Team
-        external-image: true
+        external-image: false
         picture: assets/images/byunggyu.jpg
 
     jamesfoster:

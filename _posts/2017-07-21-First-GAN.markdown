@@ -18,7 +18,7 @@ description: GAN 논문 소개
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
 ## 요약
 
-첫 포스트에서는 내가 시도했던 방법들 중 **가장 쉽게** 깃허브 블로그를 시작할 수 있는 방법을 소개하고자 한다.
+연세대학교 빅데이터 학회 YBIGTA에서 앞으로 4주 동안, 주요 딥러닝 논문들을 쉽게 풀어 포스팅할 예정입니다. 오늘은 GAN 팀의 첫번째 논문 소개입니다.
 
 **목차**
 
@@ -29,9 +29,11 @@ description: GAN 논문 소개
 - [Into Deep](#into-deep)
 - [Algorithm](#algorithm)
 
+---
 ## GAN?
 GAN은 Generative Adversarial Nets를 일컫는 말이다. 2014년 Ian J. Goodfellow의 [논문](https://arxiv.org/pdf/1406.2661.pdf)에서 처음 소개되었으며 Facebook의 Yann Lecun이 최근 나온 기계학습 아이디어 중 최고라고 말하기도 했다.
 
+---
 ## Before GAN
 
 기존의 딥러닝 모델은 Discriminative model에 초점을 맞추고 있었다. Discriminative model은 흔히 생각하는 Classifier를 생각하면 된다. 이미지 분류를 생각해보자. 3차원의 데이터-픽셀의 RGB값을 신경망에 넣으면 일련의 연산을 통해 이미지가 어떤 class에 속하는지를 뱉어낸다. 즉 고차원적이고 복잡한 input을 class의 label로 매핑하는 것이 가능해진 것이다.
@@ -43,6 +45,7 @@ GAN은 Generative Adversarial Nets를 일컫는 말이다. 2014년 Ian J. Goodfe
 
 때문이었다.
 
+---
 ## Adversarial Nets
 
 Ian Goodfellow는 다층신경망(Multilayer Perceptron, 이하 MLP) 즉 딥러닝을 Generative model에 적용할 수 있다고 주장한다. 무작위로 만들어낸 noise를 Generative model에 전달하고, 이 값이 신경망을 거치면서, 샘플을 만들어내는 것이다.
@@ -51,6 +54,7 @@ Ian Goodfellow는 다층신경망(Multilayer Perceptron, 이하 MLP) 즉 딥러�
 
 이러한 관계를 adversarial nets라고 부른다.
 
+---
 ## How to Train
 
 Goodfellow는 Generative model과 Discriminative model의 adversary한 관계에서 두 모델이 성장할 수 있다고 주장한다.
@@ -103,6 +107,7 @@ Goodfellow는 둘의 관계를 이러한 비유를 통해 설명한다.
     </tr>
     </tbody>
 </table>
+
 이 표에 따르면 일본군이 남쪽으로 가고, 연합군이 북쪽으로 정찰기를 보낸다면, 수송대가 2일 동안 폭격을 받을 것임을 나타낸다.
 
 연합군에게 최고의 결과는 정찰기를 남쪽으로 보냈을 때, 일본군 또한 남쪽으로 이동하는 경우이며, 일본군에게 최고의 결과는 수송대가 북쪽으로 이동했을때, 정찰기가 남쪽으로 갔을 때이다.
@@ -116,6 +121,7 @@ Goodfellow는 둘의 관계를 이러한 비유를 통해 설명한다.
 즉 이렇게 최악의 결과를 최소화하는 것이 minimax인 것이다.
 [Reference](https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/game-theory/Minimax.html)
 
+---
 ## Into Deep
 
 조금 더 자세히 알아보자. ${G}$는 데이터의 분포를 모방하는 것이 목표라고 했다. 즉 어떤 데이터 ${x}$가 주어졌을 때 이 데이터 ${x}$의 분포, ${p_x}$를 모방해야하는 것이다.
@@ -152,6 +158,7 @@ ${G}$는 ${p_g}$가 큰 값을 가지는 영역에서 수축하고, 작은 값�
 
 (d)충분한 학습이 진행된 다음 ${p_g = p_{data}}$이므로 더이상 학습이 진행될 수 없는 상태에 도달한다. 이후 discriminative model은 두 분포를 구분할 수 없게 된다. 따라서 ${D(x)} = \frac{1}{2}$가 된다.
 
+---
 ## Algorithm
 
 ![algorithm](/assets/images/170721-first-gan/algorithm.png)
@@ -173,3 +180,5 @@ ${G}$는 ${p_g}$가 큰 값을 가지는 영역에서 수축하고, 작은 값�
 <h6>saturate?</h6> 활성화 함수로 sigmoid를 가지는 아주 깊은 MLP의 경우를 생각해보자. 학습을 거치며 값들은 0이나 1에 가까워지게 되고 vanishing gradient문제가 발생하게 된다. 따라서 더이상 학습이 진행되지 않거나, 아주 느리게 진행된다. 이러한 경우를 neuron이 saturate되었다고 한다.
 
 즉 학습이 적절하게 일어나지 않을 수도 있다. 따라서 $[log(1-D(G(z)))]$를 최소화하는 대신, $log{D(G(z))}$를 최대화하도록 학습시킨다.
+
+---
