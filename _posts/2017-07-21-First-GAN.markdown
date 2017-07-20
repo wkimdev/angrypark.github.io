@@ -14,6 +14,9 @@ author: byunggyu
 description: GAN 논문 소개
 # jemoji: '<img class="emoji" title=":ramen:" alt=":ramen:" src="https://assets.github.com/images/icons/emoji/unicode/1f35c.png" height="20" width="20" align="absmiddle">'
 ---
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
 
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
 ## 요약
