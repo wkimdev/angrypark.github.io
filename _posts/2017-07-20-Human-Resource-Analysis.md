@@ -478,9 +478,5 @@ print("KerasClassifier Results: %.2f%% (%.2f%%)" % (results.mean()*100, results.
 
 ---
 ## 발표 자료
-{% highlight html %}
-<iframe src="//www.slideshare.net/SungnamPark2/kaggle-human-resource-data-analysis" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-{% endhighlight %}
-
-<iframe src="//www.slideshare.net/SungnamPark2/kaggle-human-resource-data-analysis" width="560" height="310" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
+<iframe src="https://www.slideshare.net/SungnamPark2/slideshelf" width="615px" height="470px" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:none;" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 ---
