@@ -119,12 +119,13 @@ Goodfellow는 둘의 관계를 이러한 비유를 통해 설명한다.
 일본군 또한 비슷한 전략을 사용한다. 최악의 결과는 남쪽으로 갔을 때 3일간의 폭격이므로, 일본군 또한 북쪽으로 갈 것이다.
 
 즉 이렇게 최악의 결과를 최소화하는 것이 minimax인 것이다.
+
 [Reference](https://cs.stanford.edu/people/eroberts/courses/soco/projects/1998-99/game-theory/Minimax.html)
 
 ---
 ## Into Deep
 
-조금 더 자세히 알아보자. ${G}$는 데이터의 분포를 모방하는 것이 목표라고 했다. 즉 어떤 데이터 ${x}$가 주어졌을 때 이 데이터 ${x}$의 분포, ${p_x}$를 모방해야하는 것이다.
+조금 더 자세히 알아보자. $${G}$$는 데이터의 분포를 모방하는 것이 목표라고 했다. 즉 어떤 데이터 $${x}$$가 주어졌을 때 이 데이터 $${x}$$의 분포, $${p_x}$$를 모방해야하는 것이다.
 
 우선 noise variable ${z}$를 정의한다. 이때 ${z}$ 또한 어떠한 확률 분포 ${p_z}$를 따를 것이다. 이렇게 noise variable을 추출하는 것을 ${p_z(z)}$라고 할 수 있다.
 이렇게 추출한 ${z}$를 Generative model이 따르는 확률분포 ${p_g}$로 매핑할 수 있게 된다. 이 과정을 MLP로 구현한다. 즉 ${G(z;\theta_d)}$(${\theta_d}$는 MLP ${G}$의 parameter)는 ${z}$를 sample로 만드는 신경망이 되는 것이다.
@@ -133,7 +134,9 @@ Goodfellow는 둘의 관계를 이러한 비유를 통해 설명한다.
 
 학습과정에 대해 조금 더 자세히 알아보자. ${D}$가 실제 데이터와 ${G}$가 만든 가짜 데이터를 잘 구분하도록 학습시켜야한다. 또한 이와 동시에  $\log(1-{D(G(z))})$를 최소화하도록 훈련시킨다.
 
-이를 다르게 표현하자면 ${D}$와 ${G}$는 value function ${V(G, D)}$로 표현되는 two-player minimax game을 하는 것과 같다:$$\min_{G}\max_{D}{V(D,G)} = \mathbb{E}_{x\sim p_{data}(x)}[logD(x)] + \mathbb{E}_{z\sim p_z(z)}[log(1-D(G(z)))].\qquad(1)$$ 이다.
+이를 다르게 표현하자면 ${D}$와 ${G}$는 value function $${V(G, D)}$$로 표현되는 two-player minimax game을 하는 것과 같다:
+$$\min_{G}\max_{D}{V(D,G)} = \mathbb{E}_{x\sim p_{data}(x)}[logD(x)] + \mathbb{E}_{z\sim p_z(z)}[log(1-D(G(z)))].\qquad(1)$$
+이다.
 
 이를 하나하나 뜯어보자.
 
