@@ -118,5 +118,3 @@ gems:
 
 jekyll-mentions:
     base_url: https://github.com
-
-markdown: redcarpet
