@@ -17,10 +17,6 @@ description: GAN으로 1D Gaussian Distribution Generate 하기
 
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
 
-<center><h2>
-[GAN] 1D Gaussian Distribution Generation
-</h2></center>
-
 ## 요약
 
 연세대학교 빅데이터 학회 YBIGTA의 GAN팀에서 준비한 두번째 시간에는 GAN을 활용하여 1D Gaussian Distribution을 generate하는 튜토리얼을 살펴보았다.
