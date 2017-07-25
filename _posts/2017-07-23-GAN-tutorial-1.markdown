@@ -274,13 +274,12 @@ for epoch in range(num_epochs):
 ---
 ## Reference
 [GAN keras code]
- https://hussamhamdan.wordpress.com/2017/04/29/generative-adversarial-networks-keras-code/
+ [https://hussamhamdan.wordpress.com/2017/04/29/generative-adversarial-networks-keras-code/](https://hussamhamdan.wordpress.com/2017/04/29/generative-adversarial-networks-keras-code/)
 
 [GAN tf code]
- https://github.com/hwalsuklee/tensorflow-GAN-1d-gaussian-ex
+[https://github.com/hwalsuklee/tensorflow-GAN-1d-gaussian-ex](https://github.com/hwalsuklee/tensorflow-GAN-1d-gaussian-ex)
 
 [GAN pytorch code]
- https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f
-
+ [https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f](https://medium.com/@devnag/generative-adversarial-networks-gans-in-50-lines-of-code-pytorch-e81b79659e3f)
 
 ---
