@@ -1,5 +1,5 @@
 ---
-title: "[GAN]1D Gaussian Distribution Generation"
+title: "[GAN] 1D Gaussian Distribution Generation"
 layout: post
 date: 2017-07-23 15:10
 image: /assets/images/170721-first-gan/background.png
@@ -16,6 +16,11 @@ description: GAN으로 1D Gaussian Distribution Generate 하기
 ---
 
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
+
+<center><h2>
+[GAN] 1D Gaussian Distribution Generation
+</h2></center>
+
 ## 요약
 
 연세대학교 빅데이터 학회 YBIGTA의 GAN팀에서 준비한 두번째 시간에는 GAN을 활용하여 1D Gaussian Distribution을 generate하는 튜토리얼을 살펴보았다.
@@ -25,6 +30,7 @@ description: GAN으로 1D Gaussian Distribution Generate 하기
 - [GAN?](#gan)
 - [1D Gaussian Distribution](#1d-gaussian-distribution)
 - [Workflow](#workflow)
+- [Algorithm](#algorithm)
 - [Visualization](#visualization)
 - [Reference](#reference)
 
@@ -38,7 +44,9 @@ GAN에 대해 간단히 복습하자면, GAN(Generative Adversarial Nets)이란 
 
 NIPS2016에서 저자인 Ian Goodfellow가 발표한 내용에 따르면, GAN은 다음과 같은 상황에서 매우 뛰어난 성능을 보여준다.
 
+
 ![Why GAN?](/assets/images/2017-07-23-GAN-tutorial-1/why-gan.png)
+
 
 가장 핵심은, GAN은 기존의 머신러닝 기법과 같이 원데이터의 분포에 대해 직접적으로 알아내고 분석한다기보다는, 원데이터와 최대한 비슷한 sample을 만들어내는 데에만 목표를 둔다는 점이다. 따라서 원데이터가 매우 복잡하고 고차원이거나, 결측치가 많거나, 원데이터가 무한히 많을 때 좋은 성능을 보여준다.
 
@@ -60,7 +68,7 @@ GAN 첫번째 튜토리얼로는 정규분포를 만든 다음에 이를 GAN을 
 ## Workflow
 코드의 workflow는 다음과 같다.
 
-![workflow](/assets/images/2017-07-23-GAN-tutorial-1/code-workflow.png)
+![workflow](/assets/images/2017-07-23-GAN-tutorial-1/code-workflow.jpg)
 
 먼저 Generator의 입장에서 말하자면, 입력값은 0과 1사이의 임의의 값이고, 이를 노이즈를 줘서 fake sample을 만들어 Discriminator에게 보낸다. 후에, Discriminator의 반응에 따라 신경망을 최적화하는데, 즉 어떤 sample에 대해서는 1(real)이라 반응했다 / 어떤 sample은 0(fake)이라 반응했다 의 여부에 따라 Generator가 최적화되는 것이다. 인상깊은 점은 **Generator는 sample이 실제로 real sample인지 fake sample인지 모른다.** 다만 Discriminator가 어떻게 평가했는지의 여부만 보고 최적화하는 것이다.
 
@@ -261,7 +269,7 @@ for epoch in range(num_epochs):
 ---
 ## Visualization
 
-
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/x7VFNpDIQ8mc2D" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/SungnamPark2/gan-1d-gaussian-distribution-tutorial" title="[GAN] 1D Gaussian Distribution Tutorial" target="_blank">[GAN] 1D Gaussian Distribution Tutorial</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/SungnamPark2">Sungnam Park</a></strong> </div>
 
 ---
 ## Reference
