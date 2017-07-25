@@ -3,7 +3,7 @@ title: "15분만에 깃허브 블로그 만들기"
 layout: post
 date: 2017-07-20 02:23
 image: /assets/images/170720/background.jpeg
-headerImage: true
+headerImage: false
 tag:
 - github
 - blog
@@ -18,8 +18,6 @@ description: 깃허브 블로그를 시작하며
 ## 요약
 
 첫 포스트에서는 내가 시도했던 방법들 중 **가장 쉽게** 깃허브 블로그를 시작할 수 있는 방법을 소개하고자 한다.
-
-**목차**
 
 - [왜 깃허브 블로그인가?](#왜-깃허브-블로그인가)
 - [설치](#설치)
