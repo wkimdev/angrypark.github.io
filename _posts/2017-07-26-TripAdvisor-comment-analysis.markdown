@@ -1,5 +1,5 @@
 ---
-title: "TripAdvisor Comments Analysis"
+title: "[CRM] TripAdvisor Comments Analysis"
 layout: post
 date: 2017-07-26 15:10
 image: /assets/images/2017-07-26-TripAdvisor-comment-analysis/background.jpg
@@ -9,7 +9,9 @@ tag:
 - text mining
 - emotion detection
 - comment analysis
+
 category: project
+
 author: angrypark
 description: 댓글 crawling부터 감정 분석까지, 일련의 과정을 공유합니다.
 
