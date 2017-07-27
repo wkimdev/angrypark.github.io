@@ -2,19 +2,20 @@
 title: "[CRM] TripAdvisor Comments Analysis"
 layout: post
 date: 2017-07-26 15:10
-image: /assets/images/2017-07-26-TripAdvisor-comment-analysis/background.jpg
-headerImage: true
 tag:
-- TripAdvisor
+- tripadvisor
 - text mining
 - emotion detection
 - comment analysis
 
+image: /assets/images/2017-07-26-TripAdvisor-comment-analysis/background.jpg
+headerImage: true
+projects: true
+hidden: true # don't count this post in blog pagination
+description: "댓글 crawling부터 감정 분석까지, 일련의 과정을 공유합니다."
 category: project
-
 author: angrypark
-description: 댓글 crawling부터 감정 분석까지, 일련의 과정을 공유합니다.
-
+externalLink: false
 ---
 
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
@@ -203,5 +204,4 @@ for line in doc_en.split('\n'):
 ## 발표 자료
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/siqmADvCQ6tOad" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/SungnamPark2/ss-78297303" title="데이터를 활용한 무슬림 맞춤형 서울 관광지도 제작" target="_blank">데이터를 활용한 무슬림 맞춤형 서울 관광지도 제작</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/SungnamPark2">Sungnam Park</a></strong> </div>
-
 ---
