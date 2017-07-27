@@ -1,7 +1,7 @@
 ---
 title: "TripAdvisor Comments Analysis"
 layout: post
-date: 2017-07-23 15:10
+date: 2017-07-26 15:10
 image: /assets/images/2017-07-26-TripAdvisor-comment-analysis/background.jpg
 headerImage: true
 tag:
