@@ -156,6 +156,8 @@ total.to_csv('review.csv',encoding = 'utf-8')
 
 ---
 ## Preprocessing
+이 과정에서는 영어 단어를 불러올 때 과거형 / 과거분사형 / 복수형 등의 단어를 기본형으로 바꾸고, 쉼표와 마침표, 대문자를 제거하는 과정이다.
+
 #### 필요한 라이브러리 불러오기
 ~~~python
 import pandas as pd
@@ -167,6 +169,7 @@ import plotly.plotly
 plotly.tools.set_credentials_file(username='your_username', api_key='your_api_key')
 import os
 ~~~
+
 
 #### 대문자, 품사 처리
 ~~~python
@@ -199,6 +202,30 @@ for line in doc_en.split('\n'):
         tmp2.append(word)
     tokens_en.append(tmp2)
 ~~~
+
+최종 긁어온 데이터는 다음과 같은 형태를 띄고 있다.
+
+![df](/assets/images/2017-07-26-TripAdvisor-comment-analysis/df.png)
+
+---
+## Emotion detection
+자 이제 각각의 리뷰에 대해 기본적인 긍/부정 분석을 해보자. 영어 자연어 처리에 쓰이는 nltk에는 바로 사용할 수 있는 긍/부정 분석기가 있다.
+#### 긍/부정 분석을 위한 라이브러리 불러오기
+~~~python
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+sid = SentimentIntensityAnalyzer()
+~~~
+
+#### 전체 관광지 별로 해당 단어가 들어간 문장들의 긍/부정 분석
+~~~python
+def detect_positive(df, place_name, word):
+    tmp = df[lambda x: x['region']==place_name]
+    return np.mean([sid.polarity_scores(x)['compound'] for x in tmp['comment'].values if word in x.lower()])
+~~~
+
+#### 관광지별 긍/부정 정도 시각화
+
+<iframe width="900" height="800" frameborder="0" scrolling="no" src="//plot.ly/~sungnampark/291.embed"></iframe>
 
 ---
 ## 발표 자료
