@@ -231,4 +231,5 @@ def detect_positive(df, place_name, word):
 ## 발표 자료
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/siqmADvCQ6tOad" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/SungnamPark2/ss-78297303" title="데이터를 활용한 무슬림 맞춤형 서울 관광지도 제작" target="_blank">데이터를 활용한 무슬림 맞춤형 서울 관광지도 제작</a> </strong> from <strong><a target="_blank" href="https://www.slideshare.net/SungnamPark2">Sungnam Park</a></strong> </div>
+
 ---
