@@ -2,22 +2,34 @@
 title: About
 layout: page
 ---
-![Profile Image](assets/images/profile.jpg)
+![Profile Image](assets/images/about_me.jpeg)
 
-<p>여기다가 이제 내 소개를 쓰면 되겠죠.</p>
+<center><h2>
+데이터 분석을 공부하는 박성남입니다.
 
-<p>여기다가 내 꿈을 쓰면 되겠죠.</p>
 
-<h2>Skills</h2>
+</h2>
 
-<ul class="skill-list">
-	<li>Python</li>
-</ul>
+연세대학교 산업공학과 3학년 재학 중
+2017-1 연세대학교 빅데이터 학회 [YBIGTA](https://www.facebook.com/yonseibigdata/) 회장
+Data Science Team에서 GAN 공부 중
+</center>
+
+<h2>Interests</h2>
+<h4>Data Analysis</h4>
+
+- python programming
+- machine learning
+- deep learning
+
+<h4>Design</h4>
+
+- adobe illustrator
+- final cut pro
+- poster, leaflet design
 
 <h2>Projects</h2>
 
-<ul>
-	<li><a href="https://github.com/">project1</a></li>
-	<li><a href="https://github.com/">project2</a></li>
-	<li><a href="https://github.com/">project3</a></li>
-</ul>
+- [[Kaggle] Movie Recommendation](https://angrypark.github.io/Movie-Recommendation/)
+- [[CRM] TripAdvisor Comments Analysis](https://angrypark.github.io/TripAdvisor-comments-analysis/)
+- [[Kaggle] Human Resource Data Analysis](https://angrypark.github.io/Human-Resource-Analysis/)
