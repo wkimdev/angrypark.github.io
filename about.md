@@ -11,7 +11,9 @@ layout: page
 </h2></center>
 
 연세대학교 산업공학과 3학년 재학 중
+
 2017-1 연세대학교 빅데이터 학회 [YBIGTA](https://www.facebook.com/yonseibigdata/) 회장
+
 Data Science Team에서 GAN 공부 중
 
 
