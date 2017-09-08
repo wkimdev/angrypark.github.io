@@ -16,6 +16,7 @@ layout: page
 
 Data Science Team에서 GAN 공부 중
 
+---
 
 <h2>Interests</h2>
 <h4>Data Analysis</h4>
@@ -29,6 +30,8 @@ Data Science Team에서 GAN 공부 중
 - adobe illustrator
 - final cut pro
 - poster, leaflet design
+
+---
 
 <h2>Projects</h2>
 
