@@ -3,7 +3,7 @@ title: "[GAN] DiscoGAN 논문 이해하기"
 layout: post
 date: 2017-09-09 20:30
 image: /assets/images/2017-09-09-DiscoGAN-paper-reading/background.jpg
-headerImage: true
+headerImage: false
 tag:
 - gan
 - pytorch
@@ -49,6 +49,7 @@ description: Disco-GAN 논문 차근차근 이해하기
 > 논문 pdf :
 [Learning to Discover Cross-Domain Relations
 with Generative Adversarial Networks, 2016](https://arxiv.org/pdf/1703.05192.pdf)
+
 ---
 
 ## 0. Abstract
@@ -58,7 +59,7 @@ with Generative Adversarial Networks, 2016](https://arxiv.org/pdf/1703.05192.pdf
 ## 1. Introduction
 사람들은 두개의 다른 도메인이 주어졌을 때 그 관계를 쉽게 찾아냅니다. 예를 들어, 영어로 구성된 문장을 프랑스어로 번역하여 주어진다면, 그 두 문장의 관계를 사람들은 쉽게 찾아낼 수 있습니다 (의미는 같다, 언어는 다르다). 또한, 우리는 우리가 입고 있는 정장과 비슷한 스타일을 가지고 있는 바지와 신발을 쉽게 찾아낼 수 있습니다. 같은 스타일을 가지되 도메인만 정장에서 바지나 신발로 옮겨주는 것이죠.
 
-그럼, 과연 기계도 서로 다른 두 개의 도메인 이미지의 관계를 찾아낼 수 있을까요? 이 문제는 *“한 이미지를 다른 조건이 달려 있는 이미지로 재생성할 수 있을까?”* 라는 문제로 재정의됩니다. 다시 말하면, 같은 이미지인데 한 도메인에서 다른 도메인으로 mapping해주는 함수를 찾을 수 있는가의 문제인 것이죠. 사실 이 문제는 최근 엄청난 관심을 받고 있는 GAN에서 이미 어느 정도 해결되었습니다. 그러나 GAN의 한계는 사람이나 다른 알고리즘이 직접 명시적으로 짝지은 데이터를 통해서만 문제를 해결할 수 있다는 것입니다. (예, 국방무늬를 갖고 있는 옷을 바꾸면 국방무늬를 가진 신발이 되!)
+그럼, 과연 기계도 서로 다른 두 개의 도메인 이미지의 관계를 찾아낼 수 있을까요? 이 문제는 *“한 이미지를 다른 조건이 달려 있는 이미지로 재생성할 수 있을까?”* 라는 문제로 재정의됩니다. 다시 말하면, 같은 이미지인데 한 도메인에서 다른 도메인으로 mapping해주는 함수를 찾을 수 있는가의 문제인 것이죠. 사실 이 문제는 최근 엄청난 관심을 받고 있는 GAN에서 이미 어느 정도 해결되었습니다. 그러나 GAN의 한계는 사람이나 다른 알고리즘이 직접 명시적으로 짝지은 데이터를 통해서만 문제를 해결할 수 있다는 것입니다. (예, 국방무늬를 갖고 있는 옷을 바꾸면 국방무늬를 가진 신발이 돼!)
 
 명시적으로 라벨링된 데이터는 쉽게 구해지지 않으며, 많은 노동력과 시간을 필요로 합니다. 더군다나, 짝 중 하나의 도메인에서라도 그 사진이 없는 경우 문제가 생기고, 쉽게 짝짓기 힘들 정도로 훌륭한 선택지가 다수 발생하기도 하죠. 따라서, 이 논문에서는 우리는 2대의 다른 도메인에서 그 어떠한 explicitly pairing 없이 관계를 발견하는 것을 목표로 합니다(관계를 '발견'한다고 해서 DiscoGAN입니다.)
 
@@ -70,7 +71,7 @@ with Generative Adversarial Networks, 2016](https://arxiv.org/pdf/1703.05192.pdf
 
 ---
 ## 2. Model
-우리는 DiscoGAN이 어떤 문제들을 해결할 수 있는지 알아보았습니다. 이제 이 모델이 어떻게 이 문제를 해결하는 지 좀 더 자세히 분석해보죠.
+우리는 DiscoGAN이 어떤 문제들을 해결할 수 있는지 알아보았습니다. 이제 이 모델이 어떻게 이 문제를 해결하는지 좀 더 자세히 분석해보죠.
 
 ### 2.1. Formulation
 관계라는 것은 $$G_{AB}$$로 정의내려질 수 있습니다. 즉 $$G_{AB}$$라는 것은 도메인 $$A$$에 있는 성분들을 $$B$$로 바꿔주는 것을 의미합니다. 완전 비지도 학습에서는, $$G_{AB}$$와 $$G_{BA}$$는 모두 처음에 정의내릴 수 없습니다. 따라서, 일단 모든 관계는 1대1 대응으로 만들어주고 시작합니다. 그러면 자연스럽게, 각각의 대응은 $$G_{AB}$$가 되며, $$G_{BA}$$는 $$G_{AB}$$의 역반응이 됩니다.
@@ -80,17 +81,22 @@ with Generative Adversarial Networks, 2016](https://arxiv.org/pdf/1703.05192.pdf
 자 이를 목적함수로 표현해봅시다. 이상적으로는, 보시는 것처럼 $$G_{BA} \circ G_{AB}(x_A) = x_A$$이면 됩니다. 하지만 이런 제한식은 너무 엄격해서 이를 만족시키기 어렵습니다(사실 불가능하죠. generate해서 원래 사진 그대로 나온다는게 ㅎㅎ).  따라서 여기서는 $$d(G_{BA} \circ G_{AB}(x_A), x_A)$$를 최소화하려고 합니다. 비슷하게, $$d(G_{AB} \circ G_{AB}(x_B), x_B)$$도 최소화해야합니다. 이를 Discriminator와 generative adversarial loss가 들어간 loss로 표현하면 다음과 같습니다.
 
 ### 2.2. Notation and Architecture
-각각의 Generator와 Discriminator의 input, output 형태를 살펴보죠.
+각각의 Generator와 Discriminator의 input, output 형태는 다음과 같습니다.
+
 $$G_{AB} :  \mathbb{R}_{A}^{64\times64\times3} \rightarrow \mathbb{R}_{B}^{64\times64\times3}$$
 
-$$D_{B} :  \mathbb{R}_{A}^{64\times64\times3} \rightarrow [0,1]$$ 입니다.
+$$D_{B} :  \mathbb{R}_{A}^{64\times64\times3} \rightarrow [0,1]$$
+
+입니다.
 
 ### 2.3. GAN with a Reconstruction Loss
 ![2](/assets/images/2017-09-09-DiscoGAN-paper-reading/2.png)
+
 처음에는 기존 GAN을 약간 변형한 구조를 생각했었다고 합니다(그림 2-a). 기존 GAN은 input이 gaussian noise였던 것 기억하시나요? 여기서는 일단 input을 도메인 $$A$$의 image로 해줍니다. 이를 기반으로 generator가 fake image를 만들어내고, 이를 Discriminator는 도메인 $$B$$의 이미지와 함께 넣어서 무엇이 진짜인지를 구분하게 합니다. 즉, Generator의 입장에서는 비록 input은 도메인 $$A$$였지만, Discriminator를 속이기 위해서는 도메인 $$B$$와 유사한 이미지를 만들어야 한다는 것이죠. 이렇게만 잘 학습이된다면, Generator는 앞서 $$G_{AB}$$의 역할을 충실히 할 수 있게 됩니다. 도메인 $$A$$를, 도메인 $$B$$로 바꿔주는 역할을 해주는 것이죠.
 
 ![3](/assets/images/2017-09-09-DiscoGAN-paper-reading/3.png)
- 하지만 이는 $$A$$에서 $$B$$로 가는 mapping만 배우게 됩니다. 동시에 $$B$$에서 다시 $$A$$로 가는 mapping도 학습하기 위해서 그림 2-b에서처럼 두번째 generator를 추가하게 됩니다. 또한 reconstruction loss도 추가하는데요, 이러한 과정들을 통해, 각각의 generator는 input 도메인에서 output 도메인으로 mapping하는 것은 물론 그 관계까지 discover하게 됩니다. 이 때 각각의 함수를 정의하고 loss function을 정의하면 다음과 같습니다.
+
+하지만 이는 $$A$$에서 $$B$$로 가는 mapping만 배우게 됩니다. 동시에 $$B$$에서 다시 $$A$$로 가는 mapping도 학습하기 위해서 그림 2-b에서처럼 두번째 generator를 추가하게 됩니다. 또한 reconstruction loss도 추가하는데요, 이러한 과정들을 통해, 각각의 generator는 input 도메인에서 output 도메인으로 mapping하는 것은 물론 그 관계까지 discover하게 됩니다. 이 때 각각의 함수를 정의하고 loss function을 정의하면 다음과 같습니다.
 
  $$x_{AB} = G_{AB}(x_A)$$
 
@@ -107,16 +113,18 @@ $$L_{D_B} = - \mathbb{E}_{x_B \sim P_B}[logD_B(D_{B}(x_B))] - \mathbb{E}_{x_A \s
 
 ### 2.4. Our Proposed Model : Discovery GAN
 ![4](/assets/images/2017-09-09-DiscoGAN-paper-reading/4.png)
- 최종적으로 이 논문에서 구현한 모델은 앞서 언급했던 그림 2-b의 모델 2개를 서로 다른 방향으로 이어주는 것입니다(그림 2-c). 각각의 모델은 하나의 도메인에서 다른 도메인으로 학습하며, 각각은 reconstruction을 통해 그 관계도 학습하게 됩니다.($$G_{ABA}$$의 BA와 $$G_{BAB}$$의 BA는 다릅니다.) 이 때 $$G_{AB}$$의 두 개의 Generator와 $$G_{BA}$$의 두 개의 Generator는 서로 파라미터를 공유합니다. 그리고 $$x_{BA}$$와 $$x_{AB}$$는 각각 $$L_{D_A}$$, $$L_{D_B}$$로 들어가게 됩니다. 이전 모델과 중요한 차이는 두 도메인의 input 이미지가 다 reconstruct되었으며 그에 따라 두 개의 reconstruction loss($$L_{CONST_A}$$, $$L_{CONST_B}$$)가 생성된다는 것입니다.
+
+최종적으로 이 논문에서 구현한 모델은 앞서 언급했던 그림 2-b의 모델 2개를 서로 다른 방향으로 이어주는 것입니다(그림 2-c). 각각의 모델은 하나의 도메인에서 다른 도메인으로 학습하며, 각각은 reconstruction을 통해 그 관계도 학습하게 됩니다.($$G_{ABA}$$의 BA와 $$G_{BAB}$$의 BA는 다릅니다.) 이 때 $$G_{AB}$$의 두 개의 Generator와 $$G_{BA}$$의 두 개의 Generator는 서로 파라미터를 공유합니다. 그리고 $$x_{BA}$$와 $$x_{AB}$$는 각각 $$L_{D_A}$$, $$L_{D_B}$$로 들어가게 됩니다. 이전 모델과 중요한 차이는 두 도메인의 input 이미지가 다 reconstruct되었으며 그에 따라 두 개의 reconstruction loss($$L_{CONST_A}$$, $$L_{CONST_B}$$)가 생성된다는 것입니다.
 
 이처럼 두 개의 모델을 짝지어줌으로서 전체 Generator의 loss는 다음과 같이 정의합니다.
 
 \begin{matrix}
-L_G &=& L_{G_{AB}} + L_{G_{AB}}\\
+L_G &=& L_{G_{AB}} + L_{G_{AB}} \\
     &=& L_{GAN_B} + L_{CONST_A} + L_{GAN_A} + L_{CONST_B}
 \end{matrix}
 
 비슷하게 전체 Discriminator의 loss는 다음과 같이 정의합니다.
+
 $$L_D = L_{D_A} + L_{D_B}$$
 
 여기까지 DiscoGAN의 성능, 발전 과정, 해결할 수 있는 문제들, 그리고 각각의 구조와 loss function을 알아보았습니다. 다음에는 코드로, 몇몇 실험에 대해 어떻게 문제를 정의 내리고 해결했는지 알아보겠습니다. 아디오스~
