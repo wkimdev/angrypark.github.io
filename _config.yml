@@ -20,7 +20,6 @@ url: https://angrypark.github.io
 # your url: http://USERNAME.github.io
 
 permalink: /:title/
-markdown: redcarpet
 # To enable google analytics, supply your token below
 # analytics-google: 'UA-MYANALYTICS'
 
