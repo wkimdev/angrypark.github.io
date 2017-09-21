@@ -78,7 +78,7 @@ with Generative Adversarial Networks, 2016](https://arxiv.org/pdf/1703.05192.pdf
 
 함수 $$G_{AB}$$의 범위는 도메인 $$A$$에 있는 모든 $$x_A$$가 도메인 $$B$$에 있는 $$G_{AB}(x_A)$$로 연결된 것입니다.
 
-자 이를 목적함수로 표현해봅시다. 이상적으로는, 보시는 것처럼 $$G_{BA} \circ G_{AB}(x_A) = x_A$$이면 됩니다. 하지만 이런 제한식은 너무 엄격해서 이를 만족시키기 어렵습니다(사실 불가능하죠. generate해서 원래 사진 그대로 나온다는게 ㅎㅎ).  따라서 여기서는 $$d(G_{BA} \circ G_{AB}(x_A), x_A)$$를 최소화하려고 합니다. 비슷하게, $$d(G_{AB} \circ G_{AB}(x_B), x_B)$$도 최소화해야합니다. 이를 Discriminator와 generative adversarial loss가 들어간 loss로 표현하면 다음과 같습니다.
+자 이를 목적함수로 표현해봅시다. 이상적으로는, 보시는 것처럼 $$G_{BA} \circ G_{AB}(x_A) = x_A$$이면 됩니다. 하지만 이런 제한식은 너무 엄격해서 이를 만족시키기 어렵습니다(사실 불가능하죠. generate해서 원래 사진 그대로 나온다는게 ㅎㅎ).  따라서 여기서는 $$d(G_{BA} \circ G_{AB}(x_A), x_A)$$를 최소화하려고 합니다. 비슷하게, $$d(G_{AB} \circ G_{BA}(x_B), x_B)$$도 최소화해야합니다. 이를 Discriminator와 generative adversarial loss가 들어간 loss로 표현하면 다음과 같습니다.
 
 ### 2.2. Notation and Architecture
 각각의 Generator와 Discriminator의 input, output 형태는 다음과 같습니다.
