@@ -25,7 +25,6 @@ description: GAN으로 1D Gaussian Distribution Generate 하기
 
 - [GAN?](#gan)
 - [Pytorch 설치](#pytorch-설치)
-- [1D Gaussian Distribution](#1d-gaussian-distribution)
 - [Workflow](#workflow)
 - [Algorithm](#algorithm)
 - [Visualization](#visualization)
@@ -264,6 +263,8 @@ for epoch in range(num_epochs):
 ## Visualization
 
 <iframe src="//www.slideshare.net/slideshow/embed_code/key/x7VFNpDIQ8mc2D" width="340" height="290" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe> <div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/SungnamPark2/gan-1d-gaussian-distribution-tutorial" title="[GAN] 1D Gaussian Distribution Tutorial" target="_blank">[GAN] 1D Gaussian Distribution Tutorial</a> </strong> from <strong><a target="_blank" href="//www.slideshare.net/SungnamPark2">Sungnam Park</a></strong> </div>
+
+파란색 선이 실제 가우시안 분포이고, 노란색 선이 우리가 점점 학습해서 만들어내가는 가짜 가우시안 분포입니다. 처음에는 어처구니 없는 값을 보이다가 점점 비슷해지는 것을 보실 수 있습니다. 만약 GAN을 더 배우신다고 해도, 기반이 되는 원리는 이와 비슷합니다. 학습하는 레이러가 좀더 복잡해지고, 때로는 Generator와 Discriminator가 많아지기도 하고, 최적화하는 값이 달라지기도 하고, noise를 조정하기도 합니다. 좀 어렵지만, 그래도 GAN이 어떤 느낌적인 느낌인지를 알 수 있는 시간이었길 바랍니당.
 
 ---
 ## Reference
