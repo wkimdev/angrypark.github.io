@@ -1,5 +1,7 @@
 ---
-title: "ISL Study-Ch3" layout: post date: 2018-01-17 18:47
+title: "ISL Study-Ch3"
+layout: post
+date: 2018-01-17 18:47
 image: /assets/images/170720/background.jpeg
 headerImage: true
 tag:
