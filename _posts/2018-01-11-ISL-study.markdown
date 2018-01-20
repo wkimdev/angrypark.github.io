@@ -1,5 +1,5 @@
 ---
-title: "ISL Study-Ch3"
+title: "[ISL] Ch3. Linear Regression"
 layout: post
 date: 2018-01-17 18:47
 image: /assets/180120/islr.jpeg

@@ -1,5 +1,5 @@
 ---
-title: "쉽게 따라하는 Fast Neural Transfer with Pytorch"
+title: "[CNN] 쉽게 따라하는 Fast Neural Transfer with Pytorch"
 layout: post
 date: 2017-08-01 20:27
 tag:

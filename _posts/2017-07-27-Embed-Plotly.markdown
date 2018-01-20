@@ -1,5 +1,5 @@
 ---
-title: "Markdown에 plotly 그래프 넣기"
+title: "[Visualization] Markdown에 plotly 그래프 넣기"
 layout: post
 date: 2017-07-27 14:01
 image: /assets/images/170720/background.jpeg
