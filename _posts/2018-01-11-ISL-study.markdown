@@ -2,7 +2,7 @@
 title: "ISL Study-Ch3"
 layout: post
 date: 2018-01-17 18:47
-image: /assets/images/170720/background.jpeg
+image: /assets/180120/islr.jpeg
 headerImage: true
 tag:
 - machine learning
@@ -67,6 +67,7 @@ $$X$$와 $$Y$$의 실제 상관관계는 어떤 알려지지 않은 함수 $$f$$
 $$ R^2=\frac{TSS-RSS}{TSS}=1-\frac{RSS}{TSS} $$
 
 $$R^2$$가 클수록, 모델이 데이터를 잘 설명해준다고 볼 수 있습니다. 하지만 상황에 따라 좋은 $$R^2$$가 무엇인지는 달라집니다. 어떤 문제에서는 $$R^2$$가 0.9가 넘어도 문제가 있을 수도 있고, 어떤 상황에서는 $$R^2$$가 0.1 미만이어도 좋은 분석이 될 수 있습니다. - 상황에 따라 좋은 $$R^2$$가 무엇인지를 선정하는 기준이 있을까?
+
 ---
 
 ## 3.2. Multiple Linear Regression
@@ -142,11 +143,16 @@ $$ = \beta_0+\tilde \beta_1X_1+\beta_2X_2+\epsilon $$ 계층적 원리에 의하
 ## 질문들 모음
 
 >**Q1. RSE, MSE, $$R^2$$의 차이는?**
+답변 :
 
 >**Q2. 상황에 따른 적절한 $$R^2$$를 구하기 위한 가이드라인이 존재하는가?**
+답변 :
 
 >**Q3. VIF와 correlation의 차이는?**
+답변 :
 
->**Q4. 다중공산성의 정의와 해결방법에 대한 말끔한 정리가 필요합니다. **
+>**Q4. 다중공산성의 정의와 해결방법에 대한 말끔한 정리가 필요합니다.**
+답변 :
 
 >**Q5. 고차원에서의 Leverage 판단방법?**
+답변 :
