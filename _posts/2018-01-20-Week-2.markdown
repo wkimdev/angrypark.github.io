@@ -4,7 +4,7 @@ title: "Case Studies of Classical CNN Networks"
 layout: post
 date: 2018-01-20 00:00
 image: /assets/images/170720/background.jpeg
-headerImage: false
+headerImage: true
 tag:
 - Deep Learning
 - Computer Vision
