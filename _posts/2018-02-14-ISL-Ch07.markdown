@@ -32,7 +32,7 @@ description: YBIGTA에서 진행하는 ISL(Introduction to Statistical Learning)
 ---
 
 
-##7.1. Polynomial Regression  
+## 7.1. Polynomial Regression  
 역사적으로 선형회귀를 비선형적 모델로 확장시킨 가장 대표적인 회귀는 다음과 같은 선형 모델을 $$  
  y_i = \beta_0 + \beta_1 x_i+\epsilon_i
 $$  
@@ -49,19 +49,19 @@ $$
 
 ---
 
-##7.2. Step Function
+## 7.2. Step Function
 ---
 
-##7.3. Basis Function
+## 7.3. Basis Function
 ---
 
-##7.4. Regression Splines
+## 7.4. Regression Splines
 ---
 
-##7.5. Smoothing Splines
+## 7.5. Smoothing Splines
 ---
 
-##7.6. Local Regression
+## 7.6. Local Regression
 ---
 
-##7.7. Generalized Additive Models
+## 7.7. Generalized Additive Models
