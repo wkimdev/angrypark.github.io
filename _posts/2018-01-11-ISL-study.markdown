@@ -16,7 +16,6 @@ description: YBIGTA에서 진행하는 ISL(Introduction to Statistical Learning)
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
 
 ## 스터디를 시작하며
----
 
 YBIGTA에서는 교육세션과 프로젝트를 통해 다양한 머신러닝 및 딥러닝 기법들을 배우고 이들을 활용합니다. 그러나 워낙 다양한 모델들을 압축적으로 배우다 보니, 통계적으로 차근차근 살펴보는 것이 좀 부족합니다. 이에 사이언스 팀에서는 이번 겨울방학동안, 그동안 배웠던 대표적인 모델들에 대해 통계적으로 더 심도있게 공부해보고자 ISL Study를 시작하였습니다.
 
@@ -26,7 +25,7 @@ YBIGTA에서는 교육세션과 프로젝트를 통해 다양한 머신러닝 �
 - 2과 : Statistical Learning에 대한 개괄과 기본 개념들을 설명합니다. KNN도 간략하게 설명합니다.
 - 3,4과 : Classical Linear Model에 대해 다룹니다. 구체적으로는 3과에서 Linear Regression을, 4과에서는 Logistic Regression을 다룰 것입니다. (logistic의 경우 generalized linear model에 속합니다. 쉽게 말해 로짓(log odds)과 linear 관계가 있습니다.)
 - 5과 : 모델의 성능을 측정하는 방법, cross-validation이나 bootstrap등에 대해 배웁니다. YBIGTA 교육세션에서 배웠던 것과 비슷하다.
-- 6과 : Linear Method에 대해 좀더 배우게 됩니다. model selection, ridge, lasso등에 대해 다룹니다. (드디어!) 
+- 6과 : Linear Method에 대해 좀더 배우게 됩니다. model selection, ridge, lasso등에 대해 다룹니다. (드디어!)
 - 7과 : non-linear method에 대해 다룹니다. 난항이 예상됩니다
 - 8과 : 인기만점 tree-based model에 대해 다룹니다. bagging, boosting, RF등을 다룹니다.
 - 9과: 들어는 봤으나 설명하진 못하는, SVM(support vector machine)에 대해 다룹니다.
@@ -45,8 +44,6 @@ YBIGTA에서는 교육세션과 프로젝트를 통해 다양한 머신러닝 �
 
 ## 3.1. Simple Linear Regression
 
----
-
 단순선형회귀는 **하나의 설명변수 $$X$$** 에 기초하여 **양적 반응변수 $$Y$$** 를 예측합니다.
 
 $$ Y \approx \beta_0+\beta_1X $$
@@ -55,7 +52,7 @@ $$ Y \approx \beta_0+\beta_1X $$
 
 다들 아시다시피, 선형성을 가진다고 가정한다면 $$\beta_0$$와 $$\beta_1$$을 추정하는 과정에서 $$MSE$$를 최소화하는 방향으로 $$\beta_0$$와 $$\beta_1$$을 구하게 되고, 수식을 정리하면 결론은 다음과 같습니다.
 
-$$\hat \beta*1 = \frac{\sum*{i=1}^{n}(x*i-\bar x)(y_i-\bar y)}{\sum*{i=1}^{n}(x_i-\bar x)^2} $$
+$$\hat \beta_1 = \frac{\sum_{i=1}^{n}(x_i-\bar x)(y_i-\bar y)}{\sum_{i=1}^{n}(x_i-\bar x)^2} $$
 
 $$\hat \beta_0 = \bar y-\hat \beta_1\bar x $$
 
