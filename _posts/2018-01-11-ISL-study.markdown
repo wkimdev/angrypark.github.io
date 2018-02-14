@@ -22,7 +22,14 @@ YBIGTA에서는 교육세션과 프로젝트를 통해 다양한 머신러닝 �
 
 저희가 스터디에서 다루는 내용은 모두 *Introduction to Statistical Learning* (이하 ISL)을 기반으로 만들어졌습니다. 이 책은 전공자들의 입문서인 *Elements of Statistical Learning* 이 엄청난 인기를 끌게 되면서 이를 더 쉽게 풀어쓴 책입니다. 이를 블로그 형식으로 요약하면서, 모르는 내용은 서로 물어보고 같이 답을 찾아나가는 형식으로 구성하였습니다.
 
-이 책의 구성을 살펴보면 다음과 같습니다. - 2과 : Statistical Learning에 대한 개괄과 기본 개념들을 설명합니다. KNN도 간략하게 설명합니다. - 3,4과 : Classical Linear Model에 대해 다룹니다. 구체적으로는 3과에서 Linear Regression을, 4과에서는 Logistic Regression을 다룰 것입니다. (logistic의 경우 generalized linear model에 속합니다. 쉽게 말해 로짓(log odds)과 linear 관계가 있습니다.) - 5과 : 모델의 성능을 측정하는 방법, cross-validation이나 bootstrap등에 대해 배웁니다. YBIGTA 교육세션에서 배웠던 것과 비슷하다. - 6과 : Linear Method에 대해 좀더 배우게 됩니다. model selection, ridge, lasso등에 대해 다룹니다. (드디어!) - 7과 : non-linear method에 대해 다룹니다. 난항이 예상됩니다 - 8과 : 인기만점 tree-based model에 대해 다룹니다. bagging, boosting, RF등을 다룹니다. - 9과: 들어는 봤으나 설명하진 못하는, SVM(support vector machine)에 대해 다룹니다.
+이 책의 구성을 살펴보면 다음과 같습니다.
+- 2과 : Statistical Learning에 대한 개괄과 기본 개념들을 설명합니다. KNN도 간략하게 설명합니다.
+- 3,4과 : Classical Linear Model에 대해 다룹니다. 구체적으로는 3과에서 Linear Regression을, 4과에서는 Logistic Regression을 다룰 것입니다. (logistic의 경우 generalized linear model에 속합니다. 쉽게 말해 로짓(log odds)과 linear 관계가 있습니다.)
+- 5과 : 모델의 성능을 측정하는 방법, cross-validation이나 bootstrap등에 대해 배웁니다. YBIGTA 교육세션에서 배웠던 것과 비슷하다.
+- 6과 : Linear Method에 대해 좀더 배우게 됩니다. model selection, ridge, lasso등에 대해 다룹니다. (드디어!) 
+- 7과 : non-linear method에 대해 다룹니다. 난항이 예상됩니다
+- 8과 : 인기만점 tree-based model에 대해 다룹니다. bagging, boosting, RF등을 다룹니다.
+- 9과: 들어는 봤으나 설명하진 못하는, SVM(support vector machine)에 대해 다룹니다.
 
 ---
 

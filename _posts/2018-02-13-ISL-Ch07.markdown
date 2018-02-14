@@ -1,5 +1,4 @@
 ---
-
 title: "[ISL] Ch7. Moving Beyond Linearity"  
 layout: post  
 date: 2018-02-14 18:00  
@@ -13,14 +12,13 @@ category: blog
 author: angrypark
 
 description: YBIGTA에서 진행하는 ISL(Introduction to Statistical Learning) Chapter 7 정리입니다.
-
 ---
 
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
 
 이번 시간에는 ISL(Introduction to Statistical Learning) 7장을 리뷰해보았습니다. 7장에서는 Moving Beyond Linearity, 선형성을 확장하고자 시도했던 여러 모델들을 배우는데요. 선형모델들의 단순 확장인 step function, polynomial regression 뿐만 아니라 splone, local regression, generalized additive model들도 다룹니다.
 
-##목차  
+## 목차  
 - [7.1. Polynomial Regression](#71-polynomial-regression)  
 - [7.2. Step Function](#72-step-function)  
 - [7.3. Basis Function](#73-base-function)  
@@ -33,7 +31,8 @@ description: YBIGTA에서 진행하는 ISL(Introduction to Statistical Learning)
 
 
 ## 7.1. Polynomial Regression  
-역사적으로 선형회귀를 비선형적 모델로 확장시킨 가장 대표적인 회귀는 다음과 같은 선형 모델을 $$  
+역사적으로 선형회귀를 비선형적 모델로 확장시킨 가장 대표적인 회귀는 다음과 같은 선형 모델을
+$$  
  y_i = \beta_0 + \beta_1 x_i+\epsilon_i
 $$  
  우리가 알고 있는 다항식 형식으로 대체하는 것입니다.
@@ -43,9 +42,9 @@ $$
 
 단순선형회귀와 마찬가지로 최소제곱법을 활용하여 쉽게 추정할 수도 있지만, d(차원)이 커질수록 지나치게 flexible해져서 이상한 결과를 낳을 수 있습니다.
 
-![1](../assets/2018-02-14/1.png)  
+![1](/assets/2018-02-14/1.png)  
 
- 위 그림에서 점선으로 된 곡선은 표준오차 곡선들입니다. 그렇다면 특정 값 $$x_0$$에 대해 어떻게 분산을 구해서 신뢰구간을 그린 것일까요? 특정 값 $$x_0$$에서
+위 그림에서 점선으로 된 곡선은 표준오차 곡선들입니다. 그렇다면 특정 값 $$x_0$$에 대해 어떻게 분산을 구해서 신뢰구간을 그린 것일까요? 특정 값 $$x_0$$에서
 
 ---
 
