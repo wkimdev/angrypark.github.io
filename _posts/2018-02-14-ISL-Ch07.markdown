@@ -12,15 +12,15 @@ tag:
 category: blog  
 author: angrypark
 
-description: YBIGTA¿¡¼­ ÁøÇàÇÏ´Â ISL(Introduction to Statistical Learning) Chapter 7 Á¤¸®ÀÔ´Ï´Ù.
+description: YBIGTAì—ì„œ ì§„í–‰í•˜ëŠ” ISL(Introduction to Statistical Learning) Chapter 7 ì •ë¦¬ì…ë‹ˆë‹¤.
 
 ---
 
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
 
-ÀÌ¹ø ½Ã°£¿¡´Â ISL(Introduction to Statistical Learning) 7ÀåÀ» ¸®ºäÇØº¸¾Ò½À´Ï´Ù. 7Àå¿¡¼­´Â Moving Beyond Linearity, ¼±Çü¼ºÀ» È®ÀåÇÏ°íÀÚ ½ÃµµÇß´ø ¿©·¯ ¸ğµ¨µéÀ» ¹è¿ì´Âµ¥¿ä. ¼±Çü¸ğµ¨µéÀÇ ´Ü¼ø È®ÀåÀÎ step function, polynomial regression »Ó¸¸ ¾Æ´Ï¶ó splone, local regression, generalized additive modelµéµµ ´Ù·ì´Ï´Ù.
+ì´ë²ˆ ì‹œê°„ì—ëŠ” ISL(Introduction to Statistical Learning) 7ì¥ì„ ë¦¬ë·°í•´ë³´ì•˜ìŠµë‹ˆë‹¤. 7ì¥ì—ì„œëŠ” Moving Beyond Linearity, ì„ í˜•ì„±ì„ í™•ì¥í•˜ê³ ì ì‹œë„í–ˆë˜ ì—¬ëŸ¬ ëª¨ë¸ë“¤ì„ ë°°ìš°ëŠ”ë°ìš”. ì„ í˜•ëª¨ë¸ë“¤ì˜ ë‹¨ìˆœ í™•ì¥ì¸ step function, polynomial regression ë¿ë§Œ ì•„ë‹ˆë¼ splone, local regression, generalized additive modelë“¤ë„ ë‹¤ë£¹ë‹ˆë‹¤.
 
-##¸ñÂ÷  
+##ëª©ì°¨  
 - [7.1. Polynomial Regression](#71-polynomial-regression)  
 - [7.2. Step Function](#72-step-function)  
 - [7.3. Basis Function](#73-base-function)  
@@ -33,19 +33,19 @@ description: YBIGTA¿¡¼­ ÁøÇàÇÏ´Â ISL(Introduction to Statistical Learning) Chapt
 
 
 ##7.1. Polynomial Regression  
-¿ª»çÀûÀ¸·Î ¼±ÇüÈ¸±Í¸¦ ºñ¼±ÇüÀû ¸ğµ¨·Î È®Àå½ÃÅ² °¡Àå ´ëÇ¥ÀûÀÎ È¸±Í´Â ´ÙÀ½°ú °°Àº ¼±Çü ¸ğµ¨À» $$  
+ì—­ì‚¬ì ìœ¼ë¡œ ì„ í˜•íšŒê·€ë¥¼ ë¹„ì„ í˜•ì  ëª¨ë¸ë¡œ í™•ì¥ì‹œí‚¨ ê°€ì¥ ëŒ€í‘œì ì¸ íšŒê·€ëŠ” ë‹¤ìŒê³¼ ê°™ì€ ì„ í˜• ëª¨ë¸ì„ $$  
  y_i = \beta_0 + \beta_1 x_i+\epsilon_i
 $$  
- ¿ì¸®°¡ ¾Ë°í ÀÖ´Â ´ÙÇ×½Ä Çü½ÄÀ¸·Î ´ëÃ¼ÇÏ´Â °ÍÀÔ´Ï´Ù.
+ ìš°ë¦¬ê°€ ì•Œê³  ìˆëŠ” ë‹¤í•­ì‹ í˜•ì‹ìœ¼ë¡œ ëŒ€ì²´í•˜ëŠ” ê²ƒì…ë‹ˆë‹¤.
 $$  
 y_i = \beta_0 + \beta_1 x_i+\beta_2 x_i^2+\beta_3 x_i^3+...+\beta_d x_i^d+\epsilon_i
 $$
 
-´Ü¼ø¼±ÇüÈ¸±Í¿Í ¸¶Âù°¡Áö·Î ÃÖ¼ÒÁ¦°ö¹ıÀ» È°¿ëÇÏ¿© ½±°Ô ÃßÁ¤ÇÒ ¼öµµ ÀÖÁö¸¸, d(Â÷¿ø)ÀÌ Ä¿Áú¼ö·Ï Áö³ªÄ¡°Ô flexibleÇØÁ®¼­ ÀÌ»óÇÑ °á°ú¸¦ ³ºÀ» ¼ö ÀÖ½À´Ï´Ù.
+ë‹¨ìˆœì„ í˜•íšŒê·€ì™€ ë§ˆì°¬ê°€ì§€ë¡œ ìµœì†Œì œê³±ë²•ì„ í™œìš©í•˜ì—¬ ì‰½ê²Œ ì¶”ì •í•  ìˆ˜ë„ ìˆì§€ë§Œ, d(ì°¨ì›)ì´ ì»¤ì§ˆìˆ˜ë¡ ì§€ë‚˜ì¹˜ê²Œ flexibleí•´ì ¸ì„œ ì´ìƒí•œ ê²°ê³¼ë¥¼ ë‚³ì„ ìˆ˜ ìˆìŠµë‹ˆë‹¤.
 
 ![1](../assets/2018-02-14/1.png)  
 
- À§ ±×¸²¿¡¼­ Á¡¼±À¸·Î µÈ °î¼±Àº Ç¥ÁØ¿ÀÂ÷ °î¼±µéÀÔ´Ï´Ù. ±×·¸´Ù¸é Æ¯Á¤ °ª $$x_0$$¿¡ ´ëÇØ ¾î¶»°Ô ºĞ»êÀ» ±¸ÇØ¼­ ½Å·Ú±¸°£À» ±×¸° °ÍÀÏ±î¿ä? Æ¯Á¤ °ª $$x_0$$¿¡¼­
+ ìœ„ ê·¸ë¦¼ì—ì„œ ì ì„ ìœ¼ë¡œ ëœ ê³¡ì„ ì€ í‘œì¤€ì˜¤ì°¨ ê³¡ì„ ë“¤ì…ë‹ˆë‹¤. ê·¸ë ‡ë‹¤ë©´ íŠ¹ì • ê°’ $$x_0$$ì— ëŒ€í•´ ì–´ë–»ê²Œ ë¶„ì‚°ì„ êµ¬í•´ì„œ ì‹ ë¢°êµ¬ê°„ì„ ê·¸ë¦° ê²ƒì¼ê¹Œìš”? íŠ¹ì • ê°’ $$x_0$$ì—ì„œ
 
 ---
 
