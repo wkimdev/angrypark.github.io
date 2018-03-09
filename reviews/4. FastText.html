@@ -284,12 +284,25 @@ $$
 </ol>
 <h3 class="mume-header" id="6-qualitative-analysis">6. Qualitative Analysis</h3>
 
+<ol>
+<li>Nearest neighbors : baseline보다 좋다</li>
+<li>Character n-grams and morphemes :</li>
+</ol>
 <h3 class="mume-header" id="7-conclusion">7. Conclusion</h3>
 
+<ul>
+<li>character 단위의 n-grams로 이루어진 subword를 활용해서 embedding</li>
+<li>train 빠름, preprocessing 필요없음</li>
+<li>baseline 보다 훨씬 좋은 성능을 보임</li>
+<li>open-source화함</li>
+</ul>
 <hr>
-<h2 class="mume-header" id="5-global-vectors-for-word-representations">5. Global Vectors for Word Representations</h2>
+<h2 class="mume-header" id="5-global-vectors-for-word-representations-glove">5. Global Vectors for Word Representations (GloVe)</h2>
 
 <p>word-word cooccurrence matrix에서 nonzero인 요소들만 학습하여 좋은 성능을 보인 word embedding 방법입니다. word-context의 sparse한 matrix에서 SVD를 통해 차원축소를 해서 좋은 결과를 보인 LSA보다 좋은 효과를 보여준다고 합니다.</p>
+<h3 class="mume-header" id="1-introduction-1">1. Introduction</h3>
+
+<p>기존에 word vector와 관련된 논문들은 크게 1) global matrix factorization, 2) local context window methods 정도로 나눌 수 있습니다. 1의 대표적인 방법인 LSA는 효율적으로 통계적 정보를 반영하지만, word analogy task같은 문제는 잘 풀지 못합니다. 2는 analogy 같은 문제들은 잘풀지만, 극소적으로 학습하기 때문에 corpus의 통계량을 반영하지 못합니다. 여기서는, specific weighted least squares 모델을 제안하여 전체 데이터셋에서의 word-word co-occurence matrix를 통해 효율적으로 통계량을 활용합니다.</p>
 
       </div>
       <div class="md-sidebar-toc"><ul>
@@ -305,7 +318,11 @@ $$
 <li><a href="#7-conclusion">7. Conclusion</a></li>
 </ul>
 </li>
-<li><a href="#5-global-vectors-for-word-representations">5. Global Vectors for Word Representations</a></li>
+<li><a href="#5-global-vectors-for-word-representations-glove">5. Global Vectors for Word Representations (GloVe)</a>
+<ul>
+<li><a href="#1-introduction-1">1. Introduction</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
