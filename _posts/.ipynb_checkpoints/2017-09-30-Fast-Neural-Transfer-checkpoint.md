@@ -15,7 +15,6 @@ description: "누구나 쉽게 따라할 수 있는 neural transfer입니다."
 category: project
 author: angrypark
 externalLink: false
-
 ---
 
 <span style="color:#7C7877; font-family: 'Apple SD Gothic Neo'; font-weight:200">
